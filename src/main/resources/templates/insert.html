@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert Bike</title>
+</head>
+<body>
+<br>
+<a href="/">Go Back</a>
+<br>
+<hr>
+<br>
+	<form method="post" action="" th:action="@{/insertBike}" th:object="${bike}">
+		<input type="hidden" name="bikeID" th:field="*{bikeID}"/>
+		Manufacturer ID: <select th:field="*{manufacturerID}">
+		<option th:each="m:${manufacturerList}" th:value="${m.manufacturerID}" th:text="${m.manufacturer}"/>
+		</select><br>
+		Model: <input type="text" name="model" th:field="*{model}" required/><br>
+		Year: <input type="number" name="year" th:field="*{year}" min="0"/><br>
+		Color: <input type="text" name="color" th:field="*{color}" required/><br>
+		Price: <input type="number" step="0.01" min="0" name="price" th:field="*{price}"/><br>
+		<br>
+		<input type="submit" value="Insert"/>
+		
+	</form>
+
+</body>
+</html>

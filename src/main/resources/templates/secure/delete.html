@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://thymeleaf.org/thymeleaf-extras-springsecurity6">
+<head>
+<meta charset="ISO-8859-1">
+<title>Delete Bike</title>
+</head>
+<body>
+<br>
+<a href="/">Go Back</a>
+<br>
+<hr>
+<br>
+	<form method="post" th:action="@{/secure/deleteBike}">
+		Bike ID: <select name="bikeID">
+		<option th:each="b:${bikeList}" th:value="${b.bikeID}" th:text="${b.model}"/>
+		</select><br><br>
+	<input type="submit" value="delete"/>
+	</form>
+	<br><br>
+	<p><a href="/" th:href="@{/}">Back to home page</a></p>
+	<p><a href="#" th:href="@{/logout}">Logout</a>.</p>
+</body>
+</html>

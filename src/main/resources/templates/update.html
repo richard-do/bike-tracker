@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Update Bike</title>
+</head>
+<body>
+<br>
+<a href="/">Go Back</a>
+<br>
+<hr>
+<br>
+	<form method="post" th:action="@{/updateBike}">
+		Model: <input type="text" name="modelName" required/><br>
+		Price: <input type="number" name="price" step="0.01" min="0"/><br>
+		<br>
+		<input type="submit" value="Update"/>
+	</form>
+
+</body>
+</html>
